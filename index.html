@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Blackjack</h1>
+
+        <!-- Credit Balance -->
+        <div class="balance-section">
+            <h2>Balance: $<span id="balance">100</span></h2>
+            <h3>Current Bet: $<span id="current-bet">0</span></h3>
+        </div>
+
+        <!-- Chip Selection -->
+        <div class="chips-section">
+            <h3>Select Your Chips:</h3>
+            <div class="chips">
+                <button class="chip chip-1" data-value="1">$1</button>
+                <button class="chip chip-2" data-value="2">$2</button>
+                <button class="chip chip-5" data-value="5">$5</button>
+                <button class="chip chip-10" data-value="10">$10</button>
+                <button class="chip chip-50" data-value="50">$50</button>
+                <button class="chip chip-100" data-value="100">$100</button>
+            </div>
+            <button id="clear-bet" class="action-btn">Clear Bet</button>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area">
+            <!-- Dealer's Hand -->
+            <div class="hand dealer-hand">
+                <h3>Dealer's Hand <span class="hand-value" id="dealer-value"></span></h3>
+                <div id="dealer-cards" class="cards"></div>
+            </div>
+
+            <!-- Player's Hand -->
+            <div class="hand player-hand">
+                <h3>Your Hand <span class="hand-value" id="player-value"></span></h3>
+                <div id="player-cards" class="cards"></div>
+            </div>
+        </div>
+
+        <!-- Game Controls -->
+        <div class="controls">
+            <button id="deal-btn" class="action-btn primary">Deal</button>
+            <button id="hit-btn" class="action-btn" disabled>Hit</button>
+            <button id="stand-btn" class="action-btn" disabled>Stand</button>
+            <button id="double-btn" class="action-btn" disabled>Double Down</button>
+        </div>
+
+        <!-- Message Area -->
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
