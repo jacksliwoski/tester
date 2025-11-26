@@ -3,58 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackjack Game</title>
+    <title>Blackjack</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Blackjack</h1>
-
-        <!-- Credit Balance -->
-        <div class="balance-section">
-            <h2>Balance: $<span id="balance">100</span></h2>
-            <h3>Current Bet: $<span id="current-bet">0</span></h3>
+    <div class="casino-table">
+        <!-- Header with Title -->
+        <div class="header">
+            <h1 class="title">BLACKJACK</h1>
         </div>
 
-        <!-- Chip Selection -->
-        <div class="chips-section">
-            <h3>Select Your Chips:</h3>
-            <div class="chips">
-                <button class="chip chip-1" data-value="1">$1</button>
-                <button class="chip chip-2" data-value="2">$2</button>
-                <button class="chip chip-5" data-value="5">$5</button>
-                <button class="chip chip-10" data-value="10">$10</button>
-                <button class="chip chip-50" data-value="50">$50</button>
-                <button class="chip chip-100" data-value="100">$100</button>
-            </div>
-            <button id="clear-bet" class="action-btn">Clear Bet</button>
+        <!-- Chips on the side -->
+        <div class="chips-stack">
+            <button class="chip chip-1" data-value="1">
+                <span class="chip-label">$1</span>
+            </button>
+            <button class="chip chip-5" data-value="5">
+                <span class="chip-label">$5</span>
+            </button>
+            <button class="chip chip-10" data-value="10">
+                <span class="chip-label">$10</span>
+            </button>
+            <button class="chip chip-100" data-value="100">
+                <span class="chip-label">$100</span>
+            </button>
+        </div>
+
+        <!-- Deck Image -->
+        <div class="deck-area">
+            <div class="deck-card"></div>
         </div>
 
         <!-- Game Area -->
         <div class="game-area">
             <!-- Dealer's Hand -->
             <div class="hand dealer-hand">
-                <h3>Dealer's Hand <span class="hand-value" id="dealer-value"></span></h3>
+                <div class="hand-header">
+                    <span class="hand-value-box" id="dealer-value"></span>
+                </div>
                 <div id="dealer-cards" class="cards"></div>
+            </div>
+
+            <!-- Center Message/Logo -->
+            <div class="center-area">
+                <div id="message" class="message"></div>
+                <div id="blackjack-label" class="blackjack-label"></div>
+            </div>
+
+            <!-- Betting Spot -->
+            <div class="betting-spot">
+                <div class="bet-circle">
+                    <span class="bet-amount">$<span id="bet-display">0</span></span>
+                </div>
             </div>
 
             <!-- Player's Hand -->
             <div class="hand player-hand">
-                <h3>Your Hand <span class="hand-value" id="player-value"></span></h3>
+                <div class="hand-header">
+                    <span class="hand-value-box" id="player-value"></span>
+                </div>
                 <div id="player-cards" class="cards"></div>
             </div>
         </div>
 
-        <!-- Game Controls -->
-        <div class="controls">
-            <button id="deal-btn" class="action-btn primary">Deal</button>
-            <button id="hit-btn" class="action-btn" disabled>Hit</button>
-            <button id="stand-btn" class="action-btn" disabled>Stand</button>
-            <button id="double-btn" class="action-btn" disabled>Double Down</button>
-        </div>
+        <!-- Bottom Control Panel -->
+        <div class="control-panel">
+            <div class="info-displays">
+                <div class="info-box">
+                    <div class="info-label">BALANCE</div>
+                    <div class="info-value">$<span id="balance">100.00</span></div>
+                </div>
+                <div class="info-box">
+                    <div class="info-label">BET</div>
+                    <div class="info-value">$<span id="current-bet">0.00</span></div>
+                </div>
+            </div>
 
-        <!-- Message Area -->
-        <div id="message" class="message"></div>
+            <div class="action-buttons">
+                <button id="new-game-btn" class="control-btn">
+                    <div class="btn-icon">🔄</div>
+                    <div class="btn-label">NEW GAME</div>
+                </button>
+                <button id="deal-btn" class="control-btn">
+                    <div class="btn-icon">🃏</div>
+                    <div class="btn-label">DEAL</div>
+                </button>
+                <button id="hit-btn" class="control-btn" disabled>
+                    <div class="btn-icon">➕</div>
+                    <div class="btn-label">HIT</div>
+                </button>
+                <button id="stand-btn" class="control-btn" disabled>
+                    <div class="btn-icon">✋</div>
+                    <div class="btn-label">STAND</div>
+                </button>
+                <button id="double-btn" class="control-btn" disabled>
+                    <div class="btn-icon">⬆️</div>
+                    <div class="btn-label">DOUBLE</div>
+                </button>
+            </div>
+
+            <div class="info-displays">
+                <div class="info-box win-box">
+                    <div class="info-label">WIN</div>
+                    <div class="info-value">$<span id="win-amount">0.00</span></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
